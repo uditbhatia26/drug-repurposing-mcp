@@ -27,7 +27,7 @@ def search(query: str) -> str:
         return response
     
     except Exception as e:
-        f"Error performing search: {str(e)}"
+        return f"Error performing search: {str(e)}"
 
     
 # To conver this into a remote server
