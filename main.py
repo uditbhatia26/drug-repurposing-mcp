@@ -13,7 +13,7 @@ def search(query: str) -> str:
             query: The search query string 
         
         Returns 
-            Search results asa formatted string
+            Search results as a formatted string
     '''
     tool = TavilySearch(
         search_depth='advanced', 
@@ -22,7 +22,9 @@ def search(query: str) -> str:
     )
     try: 
         results = tool.invoke(input=query)
-        return results['results'][0]
+        response = results['results'][0]['content']
+
+        return response
     
     except Exception as e:
         f"Error performing search: {str(e)}"
@@ -30,4 +32,4 @@ def search(query: str) -> str:
     
 # To conver this into a remote server
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run(transport='http', host='0.0.0.0', port=8000)
