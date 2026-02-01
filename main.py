@@ -1,5 +1,4 @@
 from fastmcp import FastMCP
-from fastmcp import FastMCP
 from langchain_tavily import TavilySearch
 from dotenv import load_dotenv
 load_dotenv()
