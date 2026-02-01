@@ -7,7 +7,7 @@ load_dotenv()
 mcp = FastMCP(name='MediSundhan')
 
 @mcp.tool()
-async def search(query: str) -> str:
+def search(query: str) -> str:
     '''Use this tool to seach the internet
         Args: 
             query: The search query string 
@@ -30,4 +30,4 @@ async def search(query: str) -> str:
     
 # To conver this into a remote server
 if __name__ == "__main__":
-    mcp.run(transport='http', host='0.0.0.0', port=8000)
+    mcp.run()
